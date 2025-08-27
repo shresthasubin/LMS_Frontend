@@ -1,7 +1,7 @@
 import axios from 'axios'
-// import { publicAPI } from './utils/config'
+import { privateAPI } from './utils/config'
 
-const res = await axios.get('https://lms-backend-5cm5.onrender.com/api/process/get')
+const res = await privateAPI.get('https://lms-backend-5cm5.onrender.com/api/process/get')
 const borrowed = res.data.data
 
 const borrowBook = borrowed.filter(item => item.isReturned === false).length
