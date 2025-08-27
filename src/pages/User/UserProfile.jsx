@@ -25,7 +25,7 @@ const UserProfile = () => {
 
 
   const fetchUser = async () => {
-    const res = await publicAPI.get('/user/getUser', {withCredentials: true})
+    const res = await publicAPI.get('/user/getUser')
     setUserDetail(res.data.data)
     // setProfileImage(res.data.data.profileImage)
     setFormData({
