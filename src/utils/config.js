@@ -8,7 +8,7 @@ export const publicAPI = axios.create({
 })
 
 export const privateAPI = axios.create({
-    baseURL: 'hhttps://lms-backend-5cm5.onrender.com/api',
+    baseURL: 'https://lms-backend-5cm5.onrender.com/api',
     withCredentials: true
 })
 
