@@ -4,7 +4,6 @@ import axios from 'axios'
 import Cookies from 'js-cookie'
 import { publicAPI } from '../../utils/config'
 import { toast } from 'react-toastify'
-import { renewBook } from '../../../../LMS_Backend/src/controllers/borrow.controller'
 
 
 const BorrowedBook = () => {
