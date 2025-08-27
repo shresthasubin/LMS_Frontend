@@ -18,7 +18,7 @@ body {
 .register-contaitner, .signin-container{
   width: 100vw;
   height: 100vh;
-  background: url('library.png');
+  background: url('../public/library.png');
   display: flex;
   align-items: center;
   justify-content: center;
