@@ -5,6 +5,7 @@ import { FaTachometerAlt, FaBook, FaExchangeAlt, FaUsers, FaUserCircle, FaSignOu
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import Cookies from 'js-cookie'
+import { publicAPI } from '../../utils/config'
 
 const styles = {
     display: 'flex',
@@ -16,7 +17,7 @@ const Sidebar = () => {
   const navigate = useNavigate()
   const handleLogout = async() => {
     try {
-      const res = await axios.post('http://localhost:3000/api/auth/logout', {}, {withCredentials: true})
+      const res = await publicAPI.post('/auth/logout', {})
       Cookies.remove('token')
       Cookies.remove('user')
       toast.success('User has been logged out',{

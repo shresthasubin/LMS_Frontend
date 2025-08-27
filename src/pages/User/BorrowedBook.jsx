@@ -68,7 +68,7 @@ const BorrowedBook = () => {
             .filter(book => book.isReturned === false)
             .map(book => {
               return <div key={book._id} className='w-full bg-[#0f172acc] rounded-[14px] flex gap-[14px]'>
-                <img src={`http://localhost:3000/${book.book.bookImage}`} alt="book image" style={{borderRadius: '14px 0 0 14px'}} className='h-[250px] w-[180px]'/>
+                <img src={`https://lms-backend-5cm5.onrender.com/${book.book.bookImage}`} alt="book image" style={{borderRadius: '14px 0 0 14px'}} className='h-[250px] w-[180px]'/>
                 <div className='flex flex-col gap-[3px]' style={{marginRight: '12px', marginBottom: '8px'}}>
                   <p><span className='text-lg font-bold'>Title:</span> <span className='text-xl font-bold'>{book.book.title}</span></p>
                   <p><span className='text-lg font-bold '>Author:</span> <span className='italic text-green-400'>{book.book.author}</span></p>

@@ -78,7 +78,7 @@ const UserDetail = () => {
                 .filter(user => (regex.test(user.name) || regex.test(user.email)))
                 .map((user) => {
                   return <tr key={user._id}>
-                    <td className='table-body'><img src={`http://localhost:3000/${user.profileImage}`} alt="profile image" className='w-[50px] h-[50px] rounded-full'/></td>
+                    <td className='table-body'><img src={`https://lms-backend-5cm5.onrender.com/${user.profileImage}`} alt="profile image" className='w-[50px] h-[50px] rounded-full'/></td>
                     <td className='table-body'>{user.name}</td>
                     <td className='table-body'>{user.email}</td>
                     <td className='table-body'>{user.role}</td>

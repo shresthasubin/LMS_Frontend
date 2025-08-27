@@ -216,7 +216,7 @@ const Book = () => {
               .filter(book => regex.test(book.title) || regex.test(book.author))
               .map((book) => {
                  return <div key={book._id} className='book-container'>
-                  <img src={`http://localhost:3000/${book.bookImage}`} alt="book image" className='book-image w-full h-full rounded-[14px]'/>
+                  <img src={`https://lms-backend-5cm5.onrender.com/${book.bookImage}`} alt="book image" className='book-image w-full h-full rounded-[14px]'/>
                   <div className="book-overlay"></div>
                   <div className='book-text-container w-full flex flex-col gap-[4px]'>
                     <p className='font-[600] text-[20px] texxt-[#FFFFFF]'>{book.title}</p>

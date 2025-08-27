@@ -3,12 +3,12 @@ import Cookies from 'js-cookie'
 
 
 export const publicAPI = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'https://lms-backend-5cm5.onrender.com/api',
     withCredentials: true
 })
 
 export const privateAPI = axios.create({
-    baseURL: 'http://localhost:3000/api',
+    baseURL: 'hhttps://lms-backend-5cm5.onrender.com/api',
     withCredentials: true
 })
 
