@@ -1,6 +1,7 @@
 import axios from 'axios'
+import { publicAPI } from './utils/config'
 
-const res = await axios.get('http://localhost:3000/api/process/get', {withCredentials: true})
+const res = await publicAPI.get('/process/get')
 const borrowed = res.data.data
 
 const borrowBook = borrowed.filter(item => item.isReturned === false).length
