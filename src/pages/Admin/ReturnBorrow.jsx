@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import Sidebar from '../../components/Admin/Sidebar'
 import axios from 'axios'
 import '../../table.css'
-import { publicAPI } from '../../utils/config'
+import { privateAPI, publicAPI } from '../../utils/config'
 
 const ReturnBorrow = () => {
   const [borrowedBook, setBorrowedBook] = useState([])
 
   const fetchBorrowedBook = async () => {
-    const res = await publicAPI.get('/process/getBorrowedDetailed')
+    const res = await privateAPI.get('/process/getBorrowedDetailed')
     // console.log(res.data.data)
     setBorrowedBook(res.data.data)
   }

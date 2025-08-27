@@ -4,7 +4,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import Cookies from 'js-cookie'
 import { FaPen } from 'react-icons/fa'
-import { publicAPI } from '../../utils/config'
+import { privateAPI, publicAPI } from '../../utils/config'
 
 const UserProfile = () => {
   const [userDetail, setUserDetail] = useState(null)
@@ -25,7 +25,7 @@ const UserProfile = () => {
 
 
   const fetchUser = async () => {
-    const res = await publicAPI.get('/user/getUser')
+    const res = await privateAPI.get('/user/getUser')
     setUserDetail(res.data.data)
     // setProfileImage(res.data.data.profileImage)
     setFormData({
@@ -50,7 +50,7 @@ const UserProfile = () => {
         data.append('profileImage', profileImage)
       }
       console.log(data)
-      const res = await publicAPI.put(`/user/update/${userDetail._id}`, data)
+      const res = await privateAPI.put(`/user/update/${userDetail._id}`, data)
       toast.success('Updated successfully',{
         position: 'top-right',
         autoClose: 2000,

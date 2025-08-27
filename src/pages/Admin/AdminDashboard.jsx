@@ -4,7 +4,7 @@ import '../../admin-dashboard.css'
 import axios from 'axios'
 import PieChart from '../../components/Admin/PieChart.jsx'
 import { FaBook, FaUser, FaUsers } from 'react-icons/fa'
-import { publicAPI } from '../../utils/config.js'
+import { privateAPI, publicAPI } from '../../utils/config.js'
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([])
@@ -14,7 +14,7 @@ const AdminDashboard = () => {
 
   const fetchUser = async () => {
     try {
-      const res = await publicAPI.get('/user/get')
+      const res = await privateAPI.get('/user/get')
       setUsers(res.data.data)
       setActiveUser(res.data.data.filter(user => user.isDeleted === false))
     } catch (error) {
@@ -24,7 +24,7 @@ const AdminDashboard = () => {
 
   const TotalBook = async () => {
     try {
-      const res = await publicAPI.get('/book/get')
+      const res = await privateAPI.get('/book/get')
       setTotalBook(res.data.data)
     } catch (error) {
       console.log('Error fetching books',error)
@@ -32,7 +32,7 @@ const AdminDashboard = () => {
   }
   const fetchBook = async () => {
     try {
-      const res = await publicAPI.get('/book/get?limit=5')
+      const res = await privateAPI.get('/book/get?limit=5')
       setBooks(res.data.data)
     } catch (error) {
       console.log('Error fetching books',error)

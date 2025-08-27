@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Sidebar from '../../components/User/Sidebar'
 import axios from 'axios'
 import Cookies from 'js-cookie'
-import { publicAPI } from '../../utils/config'
+import { privateAPI, publicAPI } from '../../utils/config'
 import { toast } from 'react-toastify'
 
 
@@ -11,14 +11,14 @@ const BorrowedBook = () => {
   const user = JSON.parse(Cookies.get('user'))
 
   const fetchBorrowedBook = async () => {
-    const res = await publicAPI.get(`/process/getBorrowBookByUserID/${user._id}`)
+    const res = await privateAPI.get(`/process/getBorrowBookByUserID/${user._id}`)
     console.log(res.data.data)
     setBorrowBook(res.data.data)
   }
 
   const handleReturn = async (id) => {
     try {
-      await publicAPI.put(`/process/returnBook/${id}`)
+      await privateAPI.put(`/process/returnBook/${id}`)
       toast.success('Book has been returned',{
         position: 'top-right',
         autoClose: true,
@@ -37,7 +37,7 @@ const BorrowedBook = () => {
 
   const handleRenew = async (id) => {
     try {
-      await publicAPI.put(`process/renew/${id}`)
+      await privateAPI.put(`process/renew/${id}`)
       toast.success('Book renewed successfully', {
         position: 'top-right',
         autoClose: 2000,

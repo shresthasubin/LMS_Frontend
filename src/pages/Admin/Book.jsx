@@ -3,7 +3,7 @@ import Sidebar from '../../components/Admin/Sidebar.jsx'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { FaSearch, FaStar } from 'react-icons/fa'
-import { publicAPI } from '../../utils/config.js'
+import { privateAPI, publicAPI } from '../../utils/config.js'
 
 
 const Book = () => {
@@ -23,7 +23,7 @@ const Book = () => {
 
   const fetchBook = async () => {
     try {
-      const res = await publicAPI.get('/book/get')
+      const res = await privateAPI.get('/book/get')
       setBooks(res.data.data)
     } catch (err) {
       console.error('Error fetching Book', err)
@@ -52,14 +52,14 @@ const Book = () => {
       }
 
       if (editId) {
-        await publicAPI.put(`/book/update/${editId}`, data)
+        await privateAPI.put(`/book/update/${editId}`, data)
         toast.success('Book updated successfully', {
           position: 'top-right',
           autoClose: 2000,
           hideProgressBar: false
         })
       } else {
-        await publicAPI.post(`/book/add`, data)
+        await privateAPI.post(`/book/add`, data)
         toast.success('Book added successfully', {
           position: 'top-right',
           autoClose: 2000,
@@ -88,7 +88,7 @@ const Book = () => {
 
   const handleDelete = async (id) => {
     try {
-      await publicAPI.delete(`/book/delete/${id}`)
+      await privateAPI.delete(`/book/delete/${id}`)
       toast.success('Deleted Successfully', {
         position: 'top-right',
         autoClose: 2000,

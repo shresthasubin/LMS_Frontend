@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Sidebar from '../../components/Admin/Sidebar'
-import { publicAPI } from '../../utils/config'
+import { privateAPI, publicAPI } from '../../utils/config'
 
 const Feedback = () => {
     const [feedbacks, setFeedbacks] = useState([])
 
     const fetchFeedBack = async () => {
-        const res = await publicAPI.get('/feedback/getFeedback')
+        const res = await privateAPI.get('/feedback/getFeedback')
         setFeedbacks(res.data.data)
     } 
 

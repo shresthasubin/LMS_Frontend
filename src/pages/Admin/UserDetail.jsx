@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Sidebar from '../../components/Admin/Sidebar'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { publicAPI } from '../../utils/config'
+import { privateAPI, publicAPI } from '../../utils/config'
 import { FaSearch } from 'react-icons/fa'
 
 const UserDetail = () => {
@@ -11,13 +11,13 @@ const UserDetail = () => {
   const regex = new RegExp(search, 'i')
 
   const fetchUser = async() => {
-    const res = await publicAPI.get('/user/get')
+    const res = await privateAPI.get('/user/get')
     setUsers(res.data.data)
   }
 
   const handleDelete = async (id) => {
     try {
-      await publicAPI.delete(`/user/delete/${id}`)
+      await privateAPI.delete(`/user/delete/${id}`)
       toast.success('Deletion complete', {
         position: 'top-right',
         autoClose: 2000,
@@ -33,7 +33,7 @@ const UserDetail = () => {
   } 
   const handleToggleDelete = async (id) => {
     try {
-      await publicAPI.delete(`/user/put/${id}`)
+      await privateAPI.delete(`/user/put/${id}`)
       toast.success('User Status changed', {
         position: 'top-right',
         autoClose: 2000,
