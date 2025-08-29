@@ -41,8 +41,10 @@ const UserProfile = () => {
     e.preventDefault()
     try {
       const data = new FormData()
-      data.append('name', formData.name)
-      data.append('name', formData.email)
+      Object.entries(formData).forEach(([key, val]) => {
+        data.append(key, val)
+        console.log(key,val)
+      })
 
       if (profileImage) {
         data.append('profileImage', profileImage)
