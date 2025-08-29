@@ -10,8 +10,7 @@ const UserProfile = () => {
   const [userDetail, setUserDetail] = useState(null)
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    role: ""
+    email: ""
   })
   const [profileImage, setProfileImage] = useState(null)
   const handleChange = (e) => {
@@ -41,10 +40,8 @@ const UserProfile = () => {
     e.preventDefault()
     try {
       const data = new FormData()
-      Object.entries(formData).forEach(([key, val]) => {
-        data.append(key, val)
-        console.log(key,val)
-      })
+      data.append('name', formData.name)
+      data.append('name', formData.email)
 
       if (profileImage) {
         data.append('profileImage', profileImage)
