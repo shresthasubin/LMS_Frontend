@@ -75,7 +75,7 @@ const Profile = () => {
         <p className='font-bold text-2xl'>Profile</p>
         <form onSubmit={handleUpdate} encType='multipart/form-data' style={{alignSelf: 'center'}} className='w-[500px] flex flex-col items-center gap-[12px]'>
           <div className='flex flex-col gap-[4px] items-center'>
-            <img src={`https://lms-backend-5cm5.onrender.com/${formData.profileImage}`} alt="Profile Pic" className='h-[100px] w-[100px] border-1 rounded-full' />
+            <img src={`${formData.profileImage}`} alt="Profile Pic" className='h-[100px] w-[100px] border-1 rounded-full' />
             <label htmlFor="pp">
               <span className='flex gap-[8px] items-center'>Edit profile picture <FaPen/></span>
               <input type="file" name="profileImage" onChange={handleChange} id='pp' hidden />

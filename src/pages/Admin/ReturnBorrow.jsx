@@ -39,7 +39,7 @@ const ReturnBorrow = () => {
                 borrowedBook.map((borrow) => {
                   return <tr key={borrow._id}>
                     <td className='table-body'>
-                      <img src={`https://lms-backend-5cm5.onrender.com/${borrow.user.profileImage}`} className='h-[50px] w-[50px] rounded-full' alt="" />
+                      <img src={`${borrow.user.profileImage}`} className='h-[50px] w-[50px] rounded-full' alt="" />
                     </td>
                     <td className='table-body'>{borrow.user.name}</td>
                     <td className='table-body'>{borrow.book.title}</td>

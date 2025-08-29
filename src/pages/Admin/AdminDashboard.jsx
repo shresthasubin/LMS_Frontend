@@ -73,7 +73,7 @@ const AdminDashboard = () => {
             books
             .map(book => {
               return <div key={book._id} className='relative popular-book'>
-                <img src={`https://lms-backend-5cm5.onrender.com/${book.bookImage}`} alt="" className=' w-50 h-70 rounded-[8px] '/>
+                <img src={`${book.bookImage}`} alt="" className=' w-50 h-70 rounded-[8px] '/>
                 <div className='overlay absolute w-full h-full'></div>
                 <div className='details-text w-full absolute bottom-[0] left-[0]'>
                   <p className='text-[#f1f1f1]'>{book.title}</p>
