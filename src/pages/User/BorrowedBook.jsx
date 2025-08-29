@@ -73,7 +73,7 @@ const BorrowedBook = () => {
                   <p><span className='text-lg font-bold '>Author:</span> <span className='italic text-green-400'>{book.book.author}</span></p>
                   <p><span className='text-lg font-bold'>Description:</span> <span className='text-[14px] text-gray-300'>{book.book.description}</span></p>
                   <p><span className='text-[12px] font-bold'>Borrowed Date:</span> <span className='text-[12px] font-bold'>{new Date(book.borrowDate).toLocaleString()}</span></p>
-                  <p><span className='text-[12px] font-bold'>Due Date:</span> <span className={`text-[12px] font-bold ${book.dueDate < new Date()? 'text-red-400':'text-green-400'}`}>{new Date(book.dueDate).toLocaleString()}</span></p>
+                  <p><span className='text-[12px] font-bold'>Due Date:</span> <span className={`text-[12px] font-bold ${new Date(book.dueDate) < new Date()? 'text-red-400':'text-green-400'}`}>{new Date(book.dueDate).toLocaleString()}</span></p>
                   <div className='self-end w-[410px] flex justify-between'>
                     <button type='button' onClick={() => handleReturn(book._id)} className='bg-red-600 w-[200px] ' style={{padding: '4px 16px', borderRadius: '24px', cursor: 'pointer'}}>Return</button>
                     <button type='button' onClick={() => handleRenew(book._id)} className='bg-green-600 w-[200px] ' style={{padding: '4px 16px', borderRadius: '24px', cursor: 'pointer'}}>Renew</button>
