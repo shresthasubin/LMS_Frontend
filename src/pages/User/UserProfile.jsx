@@ -87,11 +87,11 @@ const UserProfile = () => {
           </div>
           <div className='w-full flex flex-col gap-[4px]'>
             <label>Email</label>
-            <input type="text" name='email' style={{width: '467px'}} value={formData.email} onChange={handleChange}/>
+            <input type="text" name='email' style={{width: '467px'}} value={formData.email}/>
           </div>
           <div className='w-full flex flex-col gap-[4px]'>
             <label>Role</label>
-            <input type="text" name='role' style={{width: '467px'}} value={formData.role} onChange={handleChange} readOnly/>
+            <input type="text" name='role' style={{width: '467px'}} value={formData.role} readOnly/>
           </div>
           <button type='submit' className='bg-green-600 rounded-[24px] hover:bg-green-700' style={{padding: '4px 0', marginTop: '12px', width: '100%'}}>Update Profile</button>
         </form>
