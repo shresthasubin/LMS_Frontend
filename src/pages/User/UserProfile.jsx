@@ -10,7 +10,8 @@ const UserProfile = () => {
   const [userDetail, setUserDetail] = useState(null)
   const [formData, setFormData] = useState({
     name: "",
-    email: ""
+    email: "",
+    role: ""
   })
   const [profileImage, setProfileImage] = useState(null)
   const handleChange = (e) => {
