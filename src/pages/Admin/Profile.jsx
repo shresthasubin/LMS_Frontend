@@ -34,7 +34,7 @@ const Profile = () => {
       role: res.data.data.role,
       profileImage: res.data.data.profileImage
     })
-    console.log(res.data.data)
+    // console.log(res.data.data)
   }
 
   const handleUpdate = async(e) => {
@@ -43,13 +43,13 @@ const Profile = () => {
       const data = new FormData()
       Object.entries(formData).forEach(([key, val]) => {
         data.append(key, val)
-        console.log(key,val)
+        // console.log(key,val)
       })
 
       if (profileImage) {
         data.append('profileImage', profileImage)
       }
-      console.log(data)
+      // console.log(data)
       const res = await privateAPI.put(`/user/update/${userDetail._id}`, data)
       toast.success('Updated successfully',{
         position: 'top-right',

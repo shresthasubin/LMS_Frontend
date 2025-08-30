@@ -10,7 +10,7 @@ const Book = () => {
   const [books, setBooks] = useState([])
   const [search, setSearch] = useState("")
   const regex = new RegExp(search, 'i')
-  console.log(books)
+  // console.log(books)
   const [formData, setFormData] = useState({
     title: '',
     author: '',
@@ -44,7 +44,7 @@ const Book = () => {
     try {
       const data = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
-        console.log(key, value)
+        // console.log(key, value)
         data.append(key, value)
       })
       if(bookImage) {

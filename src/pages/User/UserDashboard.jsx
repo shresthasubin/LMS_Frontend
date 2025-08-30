@@ -22,7 +22,7 @@ const UserDashboard = () => {
 
   const fetchBorrowedBook = async () => {
     const res = await privateAPI.get(`/process/getBorrowedBook/${user._id}`)
-    console.log(res.data.data)
+    // console.log(res.data.data)
     setBorrowedBook(res.data.data)
   }
 

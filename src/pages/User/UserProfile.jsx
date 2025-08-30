@@ -34,7 +34,7 @@ const UserProfile = () => {
       role: res.data.data.role,
       profileImage: res.data.data.profileImage
     })
-    console.log(res.data.data)
+    // console.log(res.data.data)
   }
 
   const handleUpdate = async(e) => {
@@ -43,7 +43,7 @@ const UserProfile = () => {
       const data = new FormData()
       Object.entries(formData).forEach(([key, val]) => {
         data.append(key, val)
-        console.log(key,val)
+        // console.log(key,val)
       })
 
       if (profileImage) {

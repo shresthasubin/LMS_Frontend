@@ -12,7 +12,7 @@ const BorrowedBook = () => {
 
   const fetchBorrowedBook = async () => {
     const res = await privateAPI.get(`/process/getBorrowBookByUserID/${user._id}`)
-    console.log(res.data.data)
+    // console.log(res.data.data)
     setBorrowBook(res.data.data)
   }
 
